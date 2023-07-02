@@ -4,22 +4,21 @@ import { SystemInfo } from "./interfaces/system-info.interface";
 
 @Injectable()
 export class SystemInfoService {
-  constructor(private readonly systemInfoModel: Model<SystemInfo>) {}
+  constructor(private readonly SystemInfoModel: Model<SystemInfo>) {}
 
-  async findAllSystemInfos(): Promise<SystemInfo[]> {
-    return await this.systemInfoModel.find().exec();
+  findAllSystemInfos(): Promise<SystemInfo[]> {
+    return this.SystemInfoModel.find().exec();
   }
 
   async checkAndAdd(data: SystemInfo): Promise<string> {
-    let systemInfo = await this.systemInfoModel
-      .findOne({ macA: data.macA })
-      .exec();
+    let systemInfo = await this.SystemInfoModel.findOne({
+      macA: data.macA,
+    }).exec();
     if (systemInfo) {
       return "found";
-    } else {
-      systemInfo = new this.systemInfoModel(data);
-      await systemInfo.save();
-      return "added";
     }
+    systemInfo = new this.SystemInfoModel(data);
+    await systemInfo.save();
+    return "added";
   }
 }

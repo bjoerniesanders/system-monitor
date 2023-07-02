@@ -1,11 +1,12 @@
 import { Server, Socket } from "socket.io";
-import { SystemInfo } from "../interfaces/system-info.interface";
 import {
   OnGatewayConnection,
   OnGatewayDisconnect,
   WebSocketGateway,
   WebSocketServer,
 } from "@nestjs/websockets";
+import { SystemInfo } from "../interfaces/system-info.interface";
+
 import { SystemInfoService } from "../system.info.service";
 
 @WebSocketGateway()
@@ -30,8 +31,8 @@ export class SystemInfoGateway
 
   async handleDisconnect(client: Socket) {
     console.log("A client has disconnected from the WebSocket", client);
-    // Implement your logic when a client disconnects from the WebSocket
+    // Implement  logic when a client disconnects from the WebSocket
   }
 
-  // Implement your other socket listeners here, such as "initPerfData" and "perfData"
+  // Implement other socket listeners here, such as "initPerfData" and "perfData"
 }

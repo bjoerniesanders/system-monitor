@@ -1,6 +1,6 @@
 import { Schema } from "mongoose";
 
-export const SystemInfoSchema = new Schema({
+const SystemInfoSchema = new Schema({
   macA: String,
   cpuLoad: Number,
   freeMem: Number,
@@ -23,3 +23,5 @@ export const SystemInfoSchema = new Schema({
     percent: Number,
   },
 });
+
+export default SystemInfoSchema;

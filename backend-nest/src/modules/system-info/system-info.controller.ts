@@ -1,9 +1,7 @@
-import { Body, Get } from "@nestjs/common";
-import { Post } from "@nestjs/common";
-import { Controller } from "@nestjs/common";
+import { Body, Get, Post, Controller } from "@nestjs/common";
+import { ApiTags } from "@nestjs/swagger";
 import { SystemInfoDto } from "./dtos/system.info.dto";
 import { SystemInfoService } from "./system.info.service";
-import { ApiTags } from "@nestjs/swagger";
 
 @ApiTags("system-info")
 @Controller("system-info")
