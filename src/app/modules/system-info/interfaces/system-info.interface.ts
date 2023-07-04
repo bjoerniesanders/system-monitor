@@ -15,8 +15,8 @@ export interface SystemInfo {
   fsUsage: number;
   isActive: boolean;
   battery: {
-    hasbattery: boolean;
-    ischarging: boolean;
+    hasBattery: boolean;
+    isCharging: boolean;
     voltage: number;
     percent: number;
   };

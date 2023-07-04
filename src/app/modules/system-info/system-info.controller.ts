@@ -1,7 +1,8 @@
 import { Body, Get, Post, Controller } from "@nestjs/common";
 import { ApiTags } from "@nestjs/swagger";
-import { SystemInfoDto } from "./dtos/system.info.dto";
-import { SystemInfoService } from "./system.info.service";
+import { SystemInfoService } from "./system-info.service";
+import { SystemInfoDto } from "./dtos";
+import { SystemInfo } from "./interfaces";
 
 @ApiTags("system-info")
 @Controller("system-info")
@@ -14,7 +15,7 @@ export class SystemInfoController {
   }
 
   @Get()
-  async findAllSystemInfos() {
+  async findAllSystemInfos(): Promise<SystemInfo[]> {
     return this.systemInformationService.findAllSystemInfos();
   }
 }
