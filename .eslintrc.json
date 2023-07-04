@@ -1,0 +1,66 @@
+{
+  "root": true,
+  "parser": "@typescript-eslint/parser",
+
+  "plugins": [
+    "@typescript-eslint",
+    "prettier",
+    "strict-null-checks",
+    "promise",
+    "node",
+    "unicorn",
+    "sonarjs"
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:prettier/recommended",
+    "prettier",
+    "airbnb-base",
+    "plugin:sonarjs/recommended",
+    "plugin:promise/recommended",
+    "plugin:eslint-comments/recommended"
+  ],
+  "rules": {
+    "quotes": "off",
+    "import/prefer-default-export": "off",
+    "import/no-unresolved": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "no-useless-constructor": "off",
+    "class-methods-use-this": "off",
+    "lines-between-class-members": "off",
+    "@typescript-eslint/lines-between-class-members": [
+      "error",
+      "always",
+      { "exceptAfterOverload": true }
+    ],
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "@typescript-eslint/no-namespace": "error",
+    "@typescript-eslint/no-this-alias": "error",
+    "@typescript-eslint/ban-types": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "warn",
+    "@typescript-eslint/explicit-function-return-type": "warn",
+    "@typescript-eslint/no-var-requires": "warn",
+    "@typescript-eslint/no-empty-function": "off",
+    "@typescript-eslint/no-empty-interface": "off",
+    "@typescript-eslint/no-unnecessary-type-assertion": "error",
+    "@typescript-eslint/no-duplicate-enum-values": "error",
+    "no-unused-vars": [
+      "off",
+      { "vars": "all", "args": "after-used", "ignoreRestSiblings": true }
+    ]
+  },
+  "ignorePatterns": ["dist/", "node_modules/", "types/**/*"],
+  "overrides": [
+    {
+      "files": [
+        "*.controller.ts",
+        "*.pipe.ts",
+        "*.module.ts",
+        "*.gateway.ts",
+        "*.middleware.ts"
+      ],
+      "rules": {}
+    }
+  ]
+}
